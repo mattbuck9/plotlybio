@@ -65,11 +65,13 @@ function buildCharts(sample) {
     // Deliverable 1: 4. Create a variable that filters the samples for the object with the desired sample number.
     var sampleData = allSamples.filter(d => d.id === sample);
     // Deliverable 3: 1. Create a variable that filters the metadata array for the object with the desired sample number.
-
+    var metadata = data.metadata;
+    var metadataSample = metadata.filter(d => d.id === sample);
+    var washingFrequency = metadataSample[0].wreq;
     // Deliverable 1: 5. Create a variable that holds the first sample in the array.
     var firstSample = sampleData[0];
     // Deliverable 3: 2. Create a variable that holds the first sample in the metadata array.
-
+    
     // Deliverable 1: 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids = firstSample.otu_ids;
     var otu_labels = firstSample.otu_labels;
@@ -84,16 +86,21 @@ function buildCharts(sample) {
 
     // Deliverable 1: 8. Create the trace for the bar chart. 
     var barData = [
-      x: sample_values.slice(0,10).reverse(),
-      y: yticks,
-      type: "bar",
-      orientation: "h"
-      hovertext: otu_labels.slice(0,10).reverse(),
+      {
+        type: 'bar',
+        x: sample_values.slice(0,10).reverse(),
+        y: yticks,
+        text: otu_labels.slice(0,10).reverse(),
+        orientation: 'h'
+      }
     ];
 
     // Deliverable 1: 9. Create the layout for the bar chart. 
     var barLayout = {
       title: 'Top 10 OTUs for Sample ${sample}',
+      xaxis: {title: 'Sample Value'},
+      yaxis: {title: 'OTU ID'},
+      margin: {l: 100, r: 100, t: 100, b: 30}
 
     };
 

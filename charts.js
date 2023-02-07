@@ -107,11 +107,36 @@ function buildCharts(sample) {
     // Deliverable 1: 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", [bar_Data], barLayout)
     // Deliverable 2: 1. Create the trace for the bubble chart.
-
+    var trace = {
+      x: otu_ids,
+      y: sample_values,
+      mode: 'markers',
+      marker: {
+        size: sample_values,
+        color: otu_ids,
+        colorscale: 'Viridis',
+      },
+      text: otu_labels,
+    };
     // Deliverable 2: 2. Create the layout for the bubble chart.
-
+    var layout = {
+      title: 'Buble Chart for Selected Individual',
+      xaxis: {
+        title: 'OTU ID'
+      },
+      yaxis: {
+        title: 'Sample Value'
+      },
+      margin: {
+        t: 0,
+        l:0,
+        r:0,
+        b:0
+      },
+      hovermode: 'closest'
+    }
     // Deliverable 2: 3. Use Plotly to plot the data with the layout.
-    
+    Plotly.newPlot('bubble', [trace], layout);
     // Deliverable 3: 4. Create the trace for the gauge chart.
     
     // Deliverable 3: 5. Create the layout for the gauge chart.

@@ -1,73 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bellybutton Biodiversity</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>REGL Codegen</title>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Droid+Sans|PT+Sans+Narrow|Gravitas+One|Droid+Sans+Mono|Droid+Serif|Raleway|Old+Standard+TT"/>
+  <link rel="stylesheet" type="text/css" href="../test_dashboard/style.css">
 </head>
-<style type="text/css"></style>
 <body>
- 
-  <body class = "bg-dark text-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center"> 
-        <img src="https://microchemlab.com/wp-content/uploads/files/inline-images/bacteria%20plates.jpg">
-        <h1>Belly Button Biodiversity</h1> 
-
-      <h1>Dashboard </h1>
-      </p>
-        <p>Please use the interactive charts below to explore the dataset. They should answer most of your</p>
-      </div>
-    </div>
+  <section id="mocks-list"></section>
+  <div id="plots">
+    <div id="graph"></div>
   </div>
-    <div class="container">
-      <div class="row">
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>Test Subject ID</h5> 
+  <div id="snapshot"></div>
 
-          <body style="background-color:powderblue;">
-
-      <p> 
-            <h5>No.:</h5> 
-      </p>
-          <!-- <select id="selDataset"></select> -->
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Demographic Info</h3> 
-          </div> 
-          <div id="sample-metadata" class="panel-body"></div>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div id="bar"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
-    </div>
-    <div class="col-md-8">
-     
-  
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bubble"></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="plotly.js-master/plotly.min.js"></script>
-  <script src="charts.js"></script>
-
+  <script src="../../node_modules/mathjax/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+  <script charset="utf-8" id="source"  type="module">import "../../build/plotly.js"</script>
+  <script charset="utf-8" src="../../build/regl_codegen-bundle.js"></script>
 </body>
-
 </html>
-
